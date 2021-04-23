@@ -7,6 +7,7 @@ const axios = require("axios");
 const app = express();
 const ejs = require("ejs");
 const { query } = require("express");
+const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,6 +57,6 @@ app.post("/", (req, res) => {
     });
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("server is running");
 });
